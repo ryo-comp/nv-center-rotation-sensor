@@ -5,7 +5,7 @@
 
 ## Fundamentação Teórica e Modelagem
 
-A forma do Hamiltoniano de interação dos momentos de spin com o campo magnético baseia-se em trabalhos experimentais de espectroscopia em núcleos, e o termo de rotação baseia-se em resultados de interferometria de neutrões e sistemas rotativos:
+A forma do Hamiltoniano de interação dos momentos de spin com o campo magnético é baseada em trabalhos experimentais de espectroscopia em núcleos, e o termo de rotação baseia-se em resultados de interferometria de nêutrons e sistemas rotativos:
 
 $$
 H_{\text{magnético}} = H_{\text{elétron}} + H_{\text{núcleo}} + H_{\text{rotação}} + H_{\text{hiperfino}}
@@ -23,21 +23,30 @@ $$
 H_{\text{rotação}} = -\mathbf{\Omega}_{\text{rotação}} \cdot \mathbf{I}
 $$
 $$
-H_{\text{hiperfino}} = A_z S_z I_z + A_{\perp,z}(S_x I_x + S_y I_y)
+H_{\text{hiperfino}} = \mathbf{S} \cdot \mathbf{A} \cdot \mathbf{I} = A_z S_z I_z + A_{\perp,z}(S_x I_x + S_y I_y)
 $$
 
 ### Pulsos de Radiofrequência (RF)
 
-Os pulsos $P$ são modelados como senoides, $g(t, f) = A \cos(2 \pi f t)$, e o fator de desdobramento $f_{DQ}$ é definido como:
+Os pulsos $P$ são modelados como senoides, 
 
 $$
-P_{\pi/2}(t) = g(t,Q -f_{DQ}/2)
+$g(t, f) = A \cos(2 \pi f t)$, 
+$$
+
+e o fator de desdobramento $f_{DQ}$ é definido como:
+
+$$
+f_{\text{DQ}} = 2 B_0 \gamma_{\text{n}} \left( 1 - \frac{\gamma_{\text{e}} A_{\perp}^2}{\gamma_{\text{n}} (D^2 - \gamma_{\text{e}}^2 B_0^2)} \right).
+$$
+
+Os pulsos são modelados como:
+
+$$
+P_{\pi/2}(t) = g(t,Q - \frac{f_{DQ}}{2})
 $$
 $$
-P_{\pi/\sqrt{2}} = g(t,Q -f_{DQ}/2) + g(t,Q +f_{DQ}/2)
-$$
-$$
-f_{\text{DQ}} = 2 B_0 \gamma_{\text{n}} \left( 1 - \frac{\gamma_{\text{e}} A_{\perp}^2}{\gamma_{\text{n}} (D^2 - \gamma_{\text{e}}^2 B_0^2)} \right)
+P_{\pi/\sqrt{2}} = g(t,Q - \frac{f_{DQ}}{2}) + g(t,Q + \frac{f_{DQ}}{2})
 $$
 
 ### Parâmetros da Simulação
